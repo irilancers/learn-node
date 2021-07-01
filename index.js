@@ -1,8 +1,11 @@
 
 const express = require('express');
 const utils = require('./utils');
+const employee = require('./controllers/employee');
+const cors = require('cors')
 
 const app = express();
+app.use(cors());
 
 app.get('/',(req,res)=>{
     res.send('Hello World !!!')
@@ -25,6 +28,19 @@ app.put('/updateProduction',  (req, res)=> {
 app.delete('/', function (req, res) {
     res.send('Got a DELETE request at /user')
   })  
+
+//--------------------------------------------------------------------------------------- Employee
+
+app.get('/employees',employee.getEmployees);
+app.get('/employee/:employeeId',employee.getEmployee);
+app.post('/employee',employee.addEmployee);
+app.put('/employee',employee.editEmployee);
+app.delete('/employee',employee.deleteEmployee);
+
+app.get('/sample',employee.sample);
+
+
+//---------------------------------------------------------------------------------------
 
   app.get('/welcome',utils.welcome);
 

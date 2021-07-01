@@ -1,0 +1,7 @@
+[
+    {"employeeId":100,"firstName":"ebrahim","salary":300},
+    {"employeeId":101,"firstName":"nasrollah","salary":3000},
+    {"employeeId":102,"firstName":"fatemeh","salary":2500},
+    {"employeeId":103,"firstName":"hotan","salary":1000},
+    {"employeeId":104,"firstName":"zahra","salary":1000}
+]
