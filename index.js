@@ -1,4 +1,7 @@
+
 const express = require('express');
+const utils = require('./utils');
+
 const app = express();
 
 app.get('/',(req,res)=>{
@@ -22,5 +25,7 @@ app.put('/updateProduction',  (req, res)=> {
 app.delete('/', function (req, res) {
     res.send('Got a DELETE request at /user')
   })  
+
+  app.get('/welcome',utils.welcome);
 
 app.listen(3000,()=>{console.log(`server is running on port 3000`);});
