@@ -4,7 +4,7 @@ const employeeService = require('../services/employee');
 
 const getEmployees = (req,res)=>{
     
-    res.json(jsonData);
+    res.json({a:1});
 }
 
 

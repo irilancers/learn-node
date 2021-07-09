@@ -2,8 +2,9 @@
 const express = require('express');
 var bodyParser = require('body-parser')
 
-const utils = require('./utils');
 const employee = require('./controllers/employee');
+const departmentController = require('./controllers/department');
+
 const router = require('./routers/api/routes');
 
 const cors = require('cors')
@@ -21,6 +22,7 @@ app.use(cors());
 //------------------------------------------------------------------------------
 
 app.use('/api/v1.0/',router);
+//app.use('/api/v1.0/departments',departmentController);
 
 // app.get('/employees',employee.getEmployees);
 // app.get('/employee',employee.searchEmployee);
@@ -63,6 +65,5 @@ app.get('/sample',employee.sample);
 
 //---------------------------------------------------------------------------------------
 
-app.get('/welcome',utils.welcome);
 
 app.listen(3000,()=>{console.log(`server is running on port 3000`);});
