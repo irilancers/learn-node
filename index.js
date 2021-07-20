@@ -1,7 +1,8 @@
 
 const express = require('express');
 var bodyParser = require('body-parser')
-
+const fileUpload = require('express-fileupload');
+const path = require('path');
 const employee = require('./controllers/employee');
 const departmentController = require('./controllers/department');
 
@@ -18,6 +19,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 app.use(cors());
+app.use(fileUpload({
+  limits: { fileSize: 1 * 1024 * 1024 },
+}));
+app.use(express.static(path.join(__dirname, 'images')))
 
 //------------------------------------------------------------------------------
 

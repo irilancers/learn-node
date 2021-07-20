@@ -1,9 +1,10 @@
 
 const employeeModel = require('../models/employee.js');
 const employeeService = require('../services/employee');
+const AuthenticationController = require('../controllers/Authentication');
 
 const getEmployees = (req,res)=>{
-    
+    AuthenticationController.authenticateToken(req,res);
     res.json({a:1});
 }
 
